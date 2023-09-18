@@ -1,4 +1,14 @@
+"""
+Tic Tac Toe using MinMax algorithm
+
+A text-based Tic-Tac-Toe game where you can play against an AI opponent. Try to outsmart the AI and win the game!
+
+Author: Carl Villarosa
+cvillarosa2022@fau.edu
+"""
+
 import random
+
 
 # Initialize the Tic-Tac-Toe board
 def init_board():
@@ -6,11 +16,13 @@ def init_board():
 
 # Display the Tic-Tac-Toe board
 def display_board(board):
-    print(f"{board[0]} | {board[1]} | {board[2]}")
-    print("---------")
-    print(f"{board[3]} | {board[4]} | {board[5]}")
-    print("---------")
-    print(f"{board[6]} | {board[7]} | {board[8]}")
+    print("-------------")
+    print(f"| {board[0]} | {board[1]} | {board[2]} |")
+    print("-------------")
+    print(f"| {board[3]} | {board[4]} | {board[5]} |")
+    print("-----------")
+    print(f"| {board[6]} | {board[7]} | {board[8]} |")
+    print("-------------")
 
 # Check if the board is full
 def is_full(board):
@@ -42,7 +54,7 @@ def game_over(board):
 def available_moves(board):
     return [i for i in range(9) if board[i] == " "]
 
-# Minimax algorithm with alpha-beta pruning
+# MIN-MAX algorithm with alpha-beta pruning
 def minimax(board, depth, maximizing_player, alpha, beta):
     result = game_over(board)
 
@@ -92,34 +104,42 @@ def best_move(board):
 
 # Main game loop
 def main():
-    board = init_board()
-    player = "X"
-    ai = "O"
-
-    print("Welcome to Tic-Tac-Toe!")
-    display_board(board)
-
     while True:
-        if player == "X":
-            move = int(input("Enter your move (1-9): ")) - 1
-            if move not in available_moves(board):
-                print("Invalid move. Try again.")
-                continue
-        else:
-            move = best_move(board)
+        board = init_board()
+        player = "X"
+        ai = "O"
 
-        board[move] = player
+        print("Welcome to Tic-Tac-Toe!")
         display_board(board)
 
-        result = game_over(board)
-        if result:
-            if result == "Draw":
-                print("It's a draw!")
+        while True:
+            if player == "X":
+                display_board(board)
+                move = int(input("Enter your move (1-9): ")) - 1
+                if move not in available_moves(board):
+                    print("Invalid move. Try again.")
+                    continue
             else:
-                print(f"{result} wins!")
+                move = best_move(board)
+
+            board[move] = player
+
+            result = game_over(board)
+            if result:
+                display_board(board)
+                if result == "Draw":
+                    print("DRAW!")
+                else:
+                    print(f"{result} wins!")
+                break
+
+            player = "X" if player == "O" else "O"
+
+        play_again = input("Do you want to play another round? (yes/no): ")
+        if play_again.lower() != "yes":
             break
 
-        player = "X" if player == "O" else "O"
+    print("Thank you for playing Tic-Tac-Toe!")
 
 if __name__ == "__main__":
     main()
