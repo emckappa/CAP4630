@@ -108,8 +108,12 @@ def main():
         board = init_board()
         player = "X"
         ai = "O"
+        introduction = """This is a text-based Tic-Tac-Toe game where you can play against an AI opponent.
+Do you have what it takes to defeat an AI Algorithm? 
+This involves competitive decision-making and ultimately determines the best move for each player."""
 
         print("Welcome to Tic-Tac-Toe!")
+        print(introduction)
         display_board(board)
 
         while True:
