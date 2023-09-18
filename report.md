@@ -107,6 +107,14 @@ beta = min(beta, eval)
 These conditions are an integral part of the algorithm since we would need them for eliminating branches or nodes of the game tree, giving a much better efficiency.
 
 
+# Results
+
+![alt text](https://github.com/emckappa/CAP4630/img/1.png?raw=true)
+
+![alt text](https://github.com/emckappa/CAP4630/img/2.png?raw=true)
+
+
+
 ## Future Improvements
 
 A future improvement I would like to use would be having an interactive GUI to make it visually more appealing. 
