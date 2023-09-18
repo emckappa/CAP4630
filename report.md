@@ -5,7 +5,9 @@ Create an unbeatable AI using Minimax Algorithm.
 ## References
 
 For this project, I used these following sources for understanding TicTacToe with the Minimax Algorithm.
+
 https://www.neverstopbuilding.com/blog/minimax - Jason Fox
+
 https://www.youtube.com/watch?v=8ext9G7xspg - Kylie Ying
 
 ## Dependencies
