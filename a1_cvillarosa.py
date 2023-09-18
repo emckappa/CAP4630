@@ -1,8 +1,8 @@
 """
 Tic Tac Toe using MinMax algorithm
 
-A text-based Tic-Tac-Toe game where you can play against an AI opponent. 
-Try to outsmart the AI and win the game!
+This python project makes use of the MinMax algorithm.
+Try it out and see if you defeat the computer. 🤖
 
 Author: Carl Villarosa
 cvillarosa2022@fau.edu
@@ -12,25 +12,25 @@ cvillarosa2022@fau.edu
 import random
 
 
-# Initialize the Tic-Tac-Toe board
+# Create the tic-tac-toe board
 def init_board():
     return [" " for _ in range(9)]
 
 # Display the Tic-Tac-Toe board
 def display_board(board):
     print("-------------")
-    print(f"| {board[0]} | {board[1]} | {board[2]} |")
+    print(f"| {board[0] if board[0] != ' ' else '1'} | {board[1] if board[1] != ' ' else '2'} | {board[2] if board[2] != ' ' else '3'} |")
     print("-------------")
-    print(f"| {board[3]} | {board[4]} | {board[5]} |")
-    print("-----------")
-    print(f"| {board[6]} | {board[7]} | {board[8]} |")
+    print(f"| {board[3] if board[3] != ' ' else '4'} | {board[4] if board[4] != ' ' else '5'} | {board[5] if board[5] != ' ' else '6'} |")
+    print("-------------")
+    print(f"| {board[6] if board[6] != ' ' else '7'} | {board[7] if board[7] != ' ' else '8'} | {board[8] if board[8] != ' ' else '9'} |")
     print("-------------")
 
 # Check if the board is full
 def is_full(board):
     return " " not in board
 
-# Check if the game is over (win or draw)
+# Check if the game is over whether it's win or draw
 def game_over(board):
     # Check rows
     for i in range(0, 9, 3):
@@ -48,7 +48,7 @@ def game_over(board):
     
     # Check for a draw
     if is_full(board):
-        return "Draw"
+        return "Game is a draw!"
     
     return None
 
@@ -104,24 +104,25 @@ def best_move(board):
             best_move = move
     return best_move
 
-# Main game loop
+# main game
 def main():
     while True:
         board = init_board()
         player = "X"
         ai = "O"
-        introduction = """This is a text-based Tic-Tac-Toe game where you can play against an AI opponent.
-Do you have what it takes to defeat an AI Algorithm? 
-This involves competitive decision-making and ultimately determines the best move for each player."""
+        introduction = """Welcome to Tic-Tac-Toe!
+You are playing against an "unbeatable" opponent.
+Try your luck and see if you can defeat it! :-)
+"""
 
-        print("Welcome to Tic-Tac-Toe!")
+        
         print(introduction)
         display_board(board)
 
         while True:
             if player == "X":
                 display_board(board)
-                move = int(input("Enter your move (1-9): ")) - 1
+                move = int(input("Enter your move from (1-9): ")) - 1
                 if move not in available_moves(board):
                     print("Invalid move. Try again.")
                     continue
@@ -141,11 +142,11 @@ This involves competitive decision-making and ultimately determines the best mov
 
             player = "X" if player == "O" else "O"
 
-        play_again = input("Do you want to play another round? (yes/no): ")
-        if play_again.lower() != "yes":
+        again = input("Would you like to play another game? (Y/N): ")
+        if again.upper() != "Y":
             break
 
-    print("Thank you for playing Tic-Tac-Toe!")
+    print("Thanks for playing Tic-Tac-Toe! :-)")
 
 if __name__ == "__main__":
     main()
