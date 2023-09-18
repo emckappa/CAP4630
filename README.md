@@ -5,7 +5,8 @@ A text-based Tic-Tac-Toe game where you can play against an AI opponent
 
 ## Installation
 
-''' pip install '''
+We will need the random library for this project
+```pip install random```
 
 ## Tic-Tac-Toe with AI
 
