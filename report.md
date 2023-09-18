@@ -111,9 +111,9 @@ These conditions are an integral part of the algorithm since we would need them 
 
 # Results
 
-![alt text](https://github.com/emckappa/CAP4630/img/1.png?raw=true)
+![alt text](https://github.com/emckappa/CAP4630/blob/main/img/1.png)
 
-![alt text](https://github.com/emckappa/CAP4630/img/2.png?raw=true)
+![alt text](https://github.com/emckappa/CAP4630/blob/main/img/2.png)
 
 
 
