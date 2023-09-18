@@ -1,7 +1,8 @@
 """
 Tic Tac Toe using MinMax algorithm
 
-A text-based Tic-Tac-Toe game where you can play against an AI opponent. Try to outsmart the AI and win the game!
+A text-based Tic-Tac-Toe game where you can play against an AI opponent. 
+Try to outsmart the AI and win the game!
 
 Author: Carl Villarosa
 cvillarosa2022@fau.edu
