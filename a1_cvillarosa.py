@@ -6,6 +6,7 @@ Try to outsmart the AI and win the game!
 
 Author: Carl Villarosa
 cvillarosa2022@fau.edu
+09/18/2023
 """
 
 import random
